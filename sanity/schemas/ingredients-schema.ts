@@ -1,23 +1,25 @@
 const ingredient = {
   name: "ingredient",
-  type: "object",
+  type: "document",
   title: "Ingredient",
   fields: [
     {
       name: "name",
-      type: "string",
       title: "Name",
+      type: "string",
       required: true,
     },
     {
       name: "quantity",
-      type: "number",
       title: "Quantity",
+      type: "number",
     },
     {
       name: "unit",
-      type: "string",
       title: "Unit",
+      type: "string",
     },
   ],
 };
+
+export default ingredient;

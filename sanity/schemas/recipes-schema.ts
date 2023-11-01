@@ -5,40 +5,44 @@ const recipe = {
   fields: [
     {
       name: "title",
-      type: "string",
       title: "Title",
+      type: "string",
       required: true,
     },
     {
+      name: "slug",
+      title: "Slug",
+      type: "slug",
+      options: { source: "title" },
+    },
+    {
       name: "description",
-      type: "text",
       title: "Description",
+      type: "text",
+    },
+    {
+      name: "primaryImage",
+      title: "Primary Image",
+      type: "image",
+      options: { hotspot: true },
     },
     {
       name: "ingredients",
+      title: "Ingredients",
       type: "array",
-      of: [{ type: "ingredient" }],
+      of: [{ type: "reference", to: [{ type: "ingredient" }] }],
     },
     {
-      name: "process",
+      name: "instructions",
+      Title: "Instructions",
       type: "array",
       of: [{ type: "block" }],
     },
     {
-      name: "primaryImage",
-      type: "image",
-      title: "Primary Image",
-      options: {
-        hotspot: true,
-      },
-    },
-    {
       name: "secondaryImage",
-      type: "image",
       title: "Secondary Image",
-      options: {
-        hotspot: true,
-      },
+      type: "image",
+      options: { hotspot: true },
       fields: [
         {
           name: "alt",
@@ -49,11 +53,13 @@ const recipe = {
     },
     {
       name: "difficulty",
-      type: "string",
       title: "Difficulty",
+      type: "string",
       options: {
         list: ["Easy", "Medium", "Hard"],
       },
     },
   ],
 };
+
+export default recipe;
