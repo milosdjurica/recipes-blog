@@ -19,7 +19,6 @@ export type Recipe = {
 };
 
 export type RecipeIngredient = {
-  _ref: string;
-  _type: string;
-  _key: string;
+  recipe_ingredient_id: string;
+  name: string;
 };
