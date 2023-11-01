@@ -8,30 +8,29 @@ const client = createClient({
 });
 
 export async function getRecipes(): Promise<Recipe[]> {
-  // TODO -> transform ingredients to list of names instead of list of those ids!!!!
-  // TODO -> or maybe  transform with another api call if cant do in 1 query
-  // TODO -> and then transform data and return it like that
-  const recipes: Recipe[] = await client.fetch(
+  return client.fetch(
     groq`*[_type=="recipe"]{
             _id,
             _createdAt,
-            _updatedAt,
             title,
             "slug": slug.current,
             "primaryImage": primaryImage.asset->url,
-            "secondaryImage": {
-                "url": secondaryImage.asset->url,
-                "alt": secondaryImage.alt
-            },
             description,
-            ingredients,
-            instructions,
+            "ingredients": *[_type=="ingredient" && _id in ^.ingredients[]._ref]{
+              name,
+            },
             difficulty
-        }`,
+          }`,
+    // _updatedAt,
+    // instructions,
+    // "secondaryImage": {
+    //     "url": secondaryImage.asset->url,
+    //     "alt": secondaryImage.alt
+    // },
   );
 
-  console.log(recipes[0].ingredients);
-  return recipes;
+  // console.log(recipes[0].ingredients);
+  // return recipes;
 }
 
 // TODO

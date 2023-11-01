@@ -1,6 +1,5 @@
 import { PortableTextBlock } from "sanity";
 
-// TODO: finish typings
 export type Recipe = {
   // TODO maybe id uuid type?
   _id: string;
