@@ -24,7 +24,7 @@ export default async function AllRecipesComponent() {
             description={recipe.description}
             ingredients={recipe.ingredients}
           />
-
+          {/* // TODO maybe onClick image show whole image like dialog? */}
           <Image
             src={recipe.primaryImage}
             alt={recipe.title}
@@ -46,7 +46,7 @@ export default async function AllRecipesComponent() {
           </div>
           <Button variant="default">
             {/* // ! maybe recipe.slug but it will have conflict if 2 recipes have same name */}
-            <Link href={`recipes/${recipe.slug}`}>See recipe</Link>
+            <Link href={`recipes/${recipe._id}`}>See recipe</Link>
           </Button>
         </div>
       ))}
