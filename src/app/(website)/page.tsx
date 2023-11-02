@@ -1,6 +1,8 @@
 import { revalidatePath } from "next/cache";
 import { getRecipes } from "../../../sanity/sanity.utils";
 import Image from "next/image";
+import Link from "next/link";
+import { PortableText } from "@portabletext/react";
 
 export default async function Home() {
   revalidatePath("/");
@@ -9,18 +11,18 @@ export default async function Home() {
 
   return (
     <div>
-      <h1 className="p-4 pt-2">Recipes site</h1>
+      <h1 className="p-4 pt-2">Find great Balkan recipes</h1>
       <div className="flex justify-evenly">
         {recipes.map((recipe) => (
-          <div key={recipe._id} className="">
+          <Link
+            href={`/recipes/${recipe.slug}`}
+            key={recipe._id}
+            className="border border-red-500 p-2"
+          >
             <p>Title: {recipe.title}</p>
-            <p>Slug: {recipe.slug}</p>
             <p>Difficulty: {recipe.difficulty}</p>
-            <p>
-              Created at: {new Date(recipe._createdAt).toLocaleDateString()}
-            </p>
-            <p>{recipe._id}</p>
-            {/* <p>Description {recipe.description}</p> */}
+            {/* Desc:
+            <PortableText value={recipe.description} /> */}
             <div>
               Ingredients:
               {recipe.ingredients.map((el) => (
@@ -34,7 +36,7 @@ export default async function Home() {
               width={200}
               height={150}
             />
-          </div>
+          </Link>
         ))}
       </div>
     </div>
