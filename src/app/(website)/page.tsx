@@ -1,4 +1,4 @@
-import AllRecipesComponent from "@/components/AllRecipesComponent";
+import AllRecipesComponent from "@/src/components/AllRecipesComponent";
 import { revalidatePath } from "next/cache";
 
 export default async function Home() {

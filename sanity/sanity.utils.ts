@@ -1,4 +1,4 @@
-import { Recipe } from "@/types/recipe.type";
+import { Recipe } from "@/src/types/recipe.type";
 import { createClient, groq } from "next-sanity";
 
 const client = createClient({

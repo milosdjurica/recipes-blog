@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { PortableText } from "@portabletext/react";
 
-import { getRecipes } from "../../sanity/sanity.utils";
+import { getRecipes } from "@/sanity/sanity.utils";
 import { Button } from "./ui/button";
 
 export default async function AllRecipesComponent() {
