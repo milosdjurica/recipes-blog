@@ -7,7 +7,10 @@ const recipe = {
       name: "title",
       title: "Title",
       type: "string",
-      required: true,
+      validation: (Rule: any) =>
+        Rule.required()
+          .max(30)
+          .error("Title is required and can not be longer than 30 characters!"),
     },
     {
       name: "slug",
@@ -16,28 +19,84 @@ const recipe = {
       options: { source: "title" },
     },
     {
+      name: "time",
+      title: "Time",
+      type: "object",
+      fields: [
+        {
+          name: "count",
+          title: "Count",
+          type: "number",
+          validation: (Rule: any) => Rule.required().min(0),
+        },
+        {
+          name: "unit",
+          title: "Unit",
+          type: "string",
+          options: {
+            list: ["seconds", "minutes", "hours", "days"],
+          },
+          validation: (Rule: any) => Rule.required(),
+        },
+      ],
+      validation: (Rule: any) => Rule.required(),
+    },
+    {
+      name: "price",
+      title: "Price",
+      type: "object",
+      fields: [
+        {
+          name: "count",
+          title: "Count",
+          type: "number",
+          validation: (Rule: any) => Rule.required().min(0),
+        },
+        {
+          name: "unit",
+          title: "Unit",
+          type: "string",
+          options: {
+            list: ["RSD", "EUR"],
+          },
+          validation: (Rule: any) => Rule.required(),
+        },
+      ],
+      validation: (Rule: any) => Rule.required(),
+    },
+    {
       name: "description",
       title: "Description",
       type: "array",
       of: [{ type: "block" }],
+      validation: (Rule: any) =>
+        Rule.required().error("Please give some basic description!"),
     },
     {
       name: "primaryImage",
       title: "Primary Image",
       type: "image",
       options: { hotspot: true },
+      validation: (Rule: any) =>
+        Rule.required().error("Primary picture is mandatory!"),
     },
     {
       name: "ingredients",
       title: "Ingredients",
       type: "array",
       of: [{ type: "reference", to: [{ type: "ingredient" }] }],
+      validation: (Rule: any) =>
+        Rule.required().error("Recipe must have some ingredients!"),
     },
     {
       name: "instructions",
       Title: "Instructions",
       type: "array",
       of: [{ type: "block" }],
+      validation: (Rule: any) =>
+        Rule.required().error(
+          "Please give instructions how to prepare this dish!",
+        ),
     },
     {
       name: "secondaryImage",
@@ -59,6 +118,8 @@ const recipe = {
       options: {
         list: ["Easy", "Medium", "Hard"],
       },
+      validation: (Rule: any) =>
+        Rule.required().error("Please select difficulty!"),
     },
   ],
 };

@@ -16,6 +16,8 @@ export async function getRecipes(): Promise<Recipe[]> {
             "slug": slug.current,
             "primaryImage": primaryImage.asset->url,
             description,
+            time,
+            price,
             "ingredients": *[_type=="ingredient" && _id in ^.ingredients[]._ref]{
               "recipe_ingredient_id": _id,
               name,
@@ -30,7 +32,7 @@ export async function getRecipes(): Promise<Recipe[]> {
     // },
   );
 
-  // console.log(recipes[0].ingredients);
+  // console.log(recipes[2]);
   // return recipes;
 }
 

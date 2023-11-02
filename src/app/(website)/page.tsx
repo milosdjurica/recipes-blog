@@ -23,11 +23,18 @@ export default async function Home() {
             <p>Difficulty: {recipe.difficulty}</p>
             {/* Desc:
             <PortableText value={recipe.description} /> */}
+            <p>
+              {recipe.time?.count}
+              {recipe.time?.unit}
+            </p>
+            <p>
+              {recipe.price?.count}
+              {recipe.price?.unit}
+            </p>
             <div>
               Ingredients:
               {recipe.ingredients.map((el) => (
-                // <p>Opa</p>
-                <p key={el.recipe_ingredient_id}>{el.name}</p>
+                <h6 key={el.recipe_ingredient_id}>{el.name}</h6>
               ))}
             </div>
             <Image
