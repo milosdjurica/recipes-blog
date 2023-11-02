@@ -3,6 +3,7 @@ import { getRecipes } from "../../../sanity/sanity.utils";
 import Image from "next/image";
 import Link from "next/link";
 import { PortableText } from "@portabletext/react";
+import { ThemeButton } from "@/components/ThemeButton";
 
 export default async function Home() {
   revalidatePath("/");
@@ -12,7 +13,9 @@ export default async function Home() {
   return (
     <div>
       <h1 className="p-4 pt-2">Find great Balkan recipes</h1>
+      <ThemeButton />
       <div className="flex justify-evenly">
+        {/* // TODO double card to show all things that i need??? */}
         {recipes.map((recipe) => (
           <Link
             href={`/recipes/${recipe.slug}`}
