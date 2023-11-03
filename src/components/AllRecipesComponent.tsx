@@ -11,12 +11,12 @@ export default async function AllRecipesComponent() {
 
   return (
     // TODO  maybe change to grid
-    <div className="flex flex-wrap items-center justify-center gap-10 p-10">
+    <div className="flex flex-wrap items-center justify-center gap-6 p-2 md:p-4">
       {recipes.map((recipe) => (
         <div
           key={recipe._id}
-          className="w-[350px] space-y-2 rounded-lg bg-secondary p-5
-          shadow-md shadow-primary transition ease-in hover:scale-105"
+          className=" w-[90%] space-y-2 rounded-lg bg-secondary p-5 shadow-md shadow-primary
+          transition ease-in hover:scale-105 sm:w-[80%] md:w-[330px] lg:w-[400px]"
         >
           <h3 className="text-2xl font-semibold">{recipe.title}</h3>
           <IngredientsDialog
@@ -31,7 +31,8 @@ export default async function AllRecipesComponent() {
             width={200}
             height={150}
             // ! Check how to fix this with hotspot
-            className="max-h-[200px] w-full rounded-md object-cover"
+            // maybe max-h?
+            className="h-[200px] w-full rounded-md object-cover "
           />
           <div className="flex items-center justify-between">
             {/* // TODO add progress component to display how hard it is 
