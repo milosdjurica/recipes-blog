@@ -24,7 +24,7 @@ export default function OurTeamPerson({
     >
       <Image src={imageUrl} alt={alt} width={100} height={100} className="" />
       <div className="w-1/2">
-        <h3 className="text-3xl font-semibold">{name}</h3>
+        <h2 className="text-3xl font-semibold">{name}</h2>
         <p>{text}</p>
       </div>
     </div>
