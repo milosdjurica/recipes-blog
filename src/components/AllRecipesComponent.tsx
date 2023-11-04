@@ -1,7 +1,7 @@
 import React from "react";
 
 import { getRecipes } from "@/sanity/sanity.utils";
-import RecipeCard from "./ui/RecipeCard";
+import RecipeCard from "./RecipeCard";
 
 export default async function AllRecipesComponent() {
   const recipes = await getRecipes();

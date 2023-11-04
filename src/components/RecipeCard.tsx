@@ -1,11 +1,13 @@
 "use client";
 
+import { Recipe } from "@/src/types/recipe.type";
 import { PortableText } from "@portabletext/react";
+import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 
-export default function RecipeCard({ recipe }: any) {
+export default function RecipeCard({ recipe }: { recipe: Recipe }) {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
@@ -22,10 +24,11 @@ export default function RecipeCard({ recipe }: any) {
       >
         <div className="flex h-full items-center justify-center">
           <Link
-            href={recipe._id}
-            className="rounded-md bg-white px-4 py-2 text-black shadow-md"
+            href={`/recipes/${recipe._id}`}
+            className="flex flex-nowrap items-center  rounded-md bg-white 
+            px-4 py-2 text-sm text-black shadow-md"
           >
-            Read More
+            READ MORE <ArrowRight />
           </Link>
         </div>
       </div>

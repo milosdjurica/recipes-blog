@@ -13,7 +13,7 @@ export default async function RecipePage({ params }: Props) {
   const recipe = await getSingleRecipe(id);
 
   return (
-    <div className="space-y-6 p-6">
+    <div className="flex w-full flex-col items-center justify-center space-y-6 p-6">
       <h1 className="text-center text-5xl font-semibold text-primary">
         {recipe.title}
       </h1>
@@ -26,7 +26,7 @@ export default async function RecipePage({ params }: Props) {
           className="rounded-lg border border-primary object-cover"
         />
       </div>
-      <div className="flex flex-col items-center  justify-around md:flex-row">
+      <div className="flex flex-col items-center justify-around md:flex-row">
         <div>
           {/* // TODO put range GREEN YELLOW RED -> easy/medium/hard */}
           <h2>Difficulty: {recipe.difficulty}</h2>
@@ -35,7 +35,7 @@ export default async function RecipePage({ params }: Props) {
           Expected cost: {recipe.price?.count} {recipe.price?.unit}
         </h2>
         <div>
-          {/* // TODO add  */}
+          {/* // TODO add time icon */}
           <h2>
             Average time: {recipe.time?.count} {recipe.time?.unit}
           </h2>
