@@ -1,4 +1,5 @@
 import AllRecipesComponent from "@/src/components/AllRecipesComponent";
+import { Separator } from "@/src/components/ui/separator";
 import { revalidatePath } from "next/cache";
 
 export default async function Home() {
@@ -6,12 +7,16 @@ export default async function Home() {
 
   return (
     <main>
-      <div className="flex flex-col items-center space-y-20 py-10">
+      <div className="flex flex-col items-center space-y-10 py-10">
         <h1 className="text-center text-5xl font-bold text-primary">
-          Great Balkan recipes
+          The Culinary Fair
         </h1>
         {/* // TODO Sorting picker COMPONENT so everything stays on server side
             // TODO  and then save it to the zustand state */}
+
+        {/* <Separator  /> */}
+        <h2 className="text-3xl font-bold">Latest posts</h2>
+        {/* <Separator /> */}
         <AllRecipesComponent />
         {/* <AllRecipesComponent /> */}
       </div>
