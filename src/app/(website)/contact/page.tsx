@@ -3,20 +3,17 @@ import React from "react";
 
 export default function Contact() {
   return (
-    <div className="my-20 flex flex-col items-center space-y-20">
-      <h2 className="text-5xl font-semibold">CONTACT US</h2>
-      <div className="flex w-full flex-col items-center justify-around space-y-20 md:w-1/2 md:flex-col">
-        <div className="flex flex-col items-center">
+    <div className="my-20 flex flex-col items-center space-y-40">
+      <h2 className="text-4xl font-semibold md:text-5xl">CONTACT US</h2>
+      <div className="flex w-full flex-col items-center justify-around space-y-10 md:flex-row md:space-y-0">
+        <div className="rounded-full bg-gray-100 p-20">
           <Instagram className="h-[50px] w-[50px]" />
-          <h3>INSTAGRAM</h3>
         </div>
-        <div className="flex flex-col items-center">
+        <div className="rounded-full bg-gray-100 p-20">
           <Facebook className="h-[50px] w-[50px]" />
-          <h3>FACEBOOK</h3>
         </div>
-        <div className="flex flex-col items-center">
+        <div className="rounded-full bg-gray-100 p-20">
           <Mail className="h-[50px] w-[50px]" />
-          <h3>MAIL</h3>
         </div>
       </div>
     </div>
