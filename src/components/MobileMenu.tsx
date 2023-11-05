@@ -36,21 +36,21 @@ export function MobileMenu() {
           <Menu />
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="mr-2 w-48 border border-primary md:hidden">
+      <DropdownMenuContent className="mr-2 w-48 border border-gray-400 md:hidden">
         <div className="flex flex-wrap items-end justify-around">
           <DropdownMenuLabel className="text-md font-semibold">
             The Culinary Fair
           </DropdownMenuLabel>
         </div>
 
-        <DropdownMenuSeparator className="bg-primary" />
+        <DropdownMenuSeparator className="bg-gray-400" />
         <DropdownMenuGroup>
           <DropdownMenuItem>Home</DropdownMenuItem>
           <DropdownMenuItem>Recipes</DropdownMenuItem>
           <DropdownMenuItem>About us</DropdownMenuItem>
           <DropdownMenuItem>Contact</DropdownMenuItem>
         </DropdownMenuGroup>
-        <DropdownMenuSeparator className="bg-primary" />
+        <DropdownMenuSeparator className="bg-gray-400" />
         <DropdownMenuGroup>
           <div className="flex items-center justify-between">
             <DropdownMenuLabel className="text-md font-semibold">

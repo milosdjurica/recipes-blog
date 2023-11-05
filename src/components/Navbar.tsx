@@ -7,10 +7,10 @@ import { MobileMenu } from "./MobileMenu";
 
 export default function Navbar() {
   return (
-    <header className="flex items-center justify-between border border-b-primary border-t-primary px-3 py-2">
+    <header className="flex items-center justify-between border border-b-gray-400 border-t-gray-400 px-3 py-2">
       <h2>The Culinary Fair</h2>
       <nav className="hidden h-5 md:flex md:w-1/2 md:items-center md:justify-evenly">
-        <Separator orientation="vertical" className="bg-primary" />
+        <Separator orientation="vertical" className="bg-gray-400" />
         <Link href="/">
           <Button
             variant="link"
@@ -19,7 +19,7 @@ export default function Navbar() {
             HOME
           </Button>
         </Link>
-        <Separator orientation="vertical" className="bg-primary" />
+        <Separator orientation="vertical" className="bg-gray-400" />
 
         <Link href="/recipes">
           <Button
@@ -30,7 +30,7 @@ export default function Navbar() {
           </Button>
         </Link>
 
-        <Separator orientation="vertical" className="bg-primary" />
+        <Separator orientation="vertical" className="bg-gray-400" />
         <Link href="/about">
           <Button
             variant="link"
@@ -39,7 +39,7 @@ export default function Navbar() {
             ABOUT US
           </Button>
         </Link>
-        <Separator orientation="vertical" className="bg-primary" />
+        <Separator orientation="vertical" className="bg-gray-400" />
         <Link href="/contact">
           <Button
             variant="link"
@@ -48,7 +48,7 @@ export default function Navbar() {
             CONTACT
           </Button>
         </Link>
-        <Separator orientation="vertical" className="bg-primary" />
+        <Separator orientation="vertical" className="bg-gray-400" />
       </nav>
 
       <div className="hidden md:flex">
