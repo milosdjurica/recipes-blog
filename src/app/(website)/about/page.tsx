@@ -10,6 +10,11 @@ const ourStory =
 const lorem =
   "Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur cupiditate, minus voluptatem non ad vel praesentium accusantium dolorum rem tempore debitis. Distinctio placeat obcaecati veritatis magni animi, accusantium laboriosam voluptatibus?";
 
+const anja1 =
+  "Hi, I'm Anya! Along with being a food lover, I'm a professional copywriter and content writer. I've recognized the perfect opportunity to merge my two passions - cooking and writing. The result? The Culinary Fair is a blog that's a testament to my dedication to the culinary arts and the written craft. With a deep appreciation for wholesome, healthy, and delicious food, The Culinary Fair's focus is creating recipes that celebrate natural ingredients, whole grains, good fats, and an abundance of fresh fruits and vegetables. My love for the culinary world goes beyond the kitchen.";
+const anja2 =
+  "I'm on a mission to make your cooking experience a delightful and enriching adventure. Whether you're a seasoned home chef or just starting your culinary journey, The Culinary Fair is designed to inspire, educate, and simplify your path to culinary excellence. Feel free to reach out to us with your questions or simply to say 'hi.' - Remember, this is more than just a blog; it's a journey that invites you to explore the world of flavors, one delicious recipe at a time.";
+
 export default function About() {
   return (
     // !First
@@ -31,22 +36,19 @@ export default function About() {
         reverse={true}
       />
       {/* // ! OUR TEAM SECTION */}
-      <div className="flex flex-col space-y-40">
-        <OurTeamPerson
-          name="Anja Bulatovic"
-          text={lorem}
-          imageUrl="/images/about.png"
-          alt="alt for pic"
-          reverse={false}
-        />
-        <OurTeamPerson
-          name="Anja Bulatovic"
-          text={lorem}
-          imageUrl="/images/about.png"
-          alt="alt for pic"
-          reverse={true}
-        />
-      </div>
+      <OurTeamPerson
+        name="Anja Bulatovic"
+        text={anja1}
+        imageUrl="/images/anja.png"
+        alt="alt for pic"
+        reverse={false}
+      />
+      <OurTeamPerson
+        text={anja2}
+        imageUrl="/images/doodle.png"
+        alt="doodle alt"
+        reverse={true}
+      />
     </div>
   );
 }

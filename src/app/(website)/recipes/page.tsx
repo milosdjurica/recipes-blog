@@ -28,16 +28,16 @@ export default async function RecipesPage() {
           friends.
         </p>
       </div>
+      {/* // TODO ADD NEXT PAGE BUTTON */}
       <div className="mx-auto flex flex-wrap items-center justify-around">
         {recipes.map((recipe) => (
           <Link href={recipe._id} key={recipe._id} className="space-y-5 p-4">
-            <div className="relative h-[400px] w-[300px]">
+            <div className="relative h-[350px] w-[350px] ">
               <Image
                 src={recipe.primaryImage}
                 alt="opa"
-                // width={300}
-                // height={300}
                 fill
+                className="object-cover"
               />
             </div>
             <h3>{recipe.title}</h3>
@@ -46,13 +46,12 @@ export default async function RecipesPage() {
         ))}
         {recipes.map((recipe) => (
           <div key={recipe._id} className="space-y-5 p-4">
-            <div className="relative h-[400px] w-[300px]">
+            <div className="relative h-[350px] w-[350px]">
               <Image
                 src={recipe.primaryImage}
                 alt="opa"
-                // width={300}
-                // height={300}
                 fill
+                className="object-cover"
               />
             </div>
             <h3>{recipe.title}</h3>

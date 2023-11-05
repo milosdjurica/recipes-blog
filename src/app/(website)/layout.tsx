@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "../globals.css";
 import { ThemeProvider } from "@/src/providers/ThemeProvider";
 import Navbar from "@/src/components/Navbar";
+import ScrollButton from "@/src/components/ScrollButton";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -29,6 +30,7 @@ export default function RootLayout({
           <Navbar />
           {children}
         </ThemeProvider>
+        <ScrollButton />
       </body>
     </html>
   );

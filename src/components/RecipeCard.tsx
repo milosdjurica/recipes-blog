@@ -12,7 +12,7 @@ export default function RecipeCard({ recipe }: { recipe: Recipe }) {
 
   return (
     <div
-      className="relative h-[400px] w-[90%] space-y-6 overflow-hidden rounded-lg p-4
+      className="relative h-[400px] w-[90%] overflow-hidden rounded-lg p-4
       sm:w-[80%] md:w-[330px] lg:w-[400px]"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
@@ -33,7 +33,7 @@ export default function RecipeCard({ recipe }: { recipe: Recipe }) {
         </div>
       </div>
 
-      <div className="relative">
+      <div className="relative space-y-3">
         <h3 className="text-2xl font-semibold">{recipe.title}</h3>
         <Image
           src={recipe.primaryImage}

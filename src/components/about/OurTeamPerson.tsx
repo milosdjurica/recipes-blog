@@ -1,8 +1,9 @@
 import React from "react";
 import Image from "next/image";
+import { Facebook, Instagram, Mail } from "lucide-react";
 
 type OurTeamPersonProps = {
-  name: string;
+  name?: string;
   text: string;
   imageUrl: string;
   alt: string;
@@ -18,14 +19,20 @@ export default function OurTeamPerson({
 }: OurTeamPersonProps) {
   return (
     <div
-      className={`flex items-center justify-around text-center ${
-        reverse ? "flex-row-reverse" : ""
+      className={`flex flex-col items-center justify-around space-y-10 text-center ${
+        reverse ? "md:flex-row-reverse" : "md:flex-row"
       }`}
     >
-      <Image src={imageUrl} alt={alt} width={100} height={100} className="" />
-      <div className="w-1/2">
+      <Image src={imageUrl} alt={alt} width={250} height={150} />
+      <div className="space-y-5 md:w-1/2">
         <h2 className="text-3xl font-semibold">{name}</h2>
         <p>{text}</p>
+        <div className="flex justify-evenly">
+          {/* // ! ADD LINKS */}
+          <Facebook size="30px" />
+          <Instagram size="30px" />
+          <Mail size="30px" />
+        </div>
       </div>
     </div>
   );
