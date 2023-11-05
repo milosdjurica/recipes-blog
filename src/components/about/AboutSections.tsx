@@ -18,7 +18,7 @@ export default function AboutSections({
 }: AboutSections) {
   return (
     <div
-      className={`flex flex-col items-center justify-between border border-black ${
+      className={`flex flex-col items-center justify-between ${
         reverse ? "md:flex-row-reverse" : "md:flex-row"
       } md:items-center md:space-x-10`}
     >

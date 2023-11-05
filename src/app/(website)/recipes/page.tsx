@@ -1,6 +1,7 @@
 import { getRecipes } from "@/sanity/sanity.utils";
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default async function RecipesPage() {
   const recipes = await getRecipes();
@@ -15,19 +16,21 @@ export default async function RecipesPage() {
   }
 
   return (
-    <div className="space-y-40 text-center">
+    <div className="my-20 space-y-40 text-center">
       <div className="mx-auto mt-20 flex flex-col items-center space-y-20  md:w-2/3">
         <h1 className="text-5xl font-semibold">Recipes</h1>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque sed
-          distinctio dignissimos, consectetur eos voluptate magnam incidunt
-          repellat adipisci officia magni porro doloribus praesentium maxime
-          voluptatem! Tempore eius magni itaque.
+          Recipes are the heart and soul of The Culinary Fair - So, whether
+          you&#39;re a seasoned home chef or just starting your culinary
+          journey, The Culinary Fair&#39;s recipes is your one-stop destination
+          for culinary inspo. Let our recipes guide you through cooking
+          exquisite meals that excite your desire and impress your family and
+          friends.
         </p>
       </div>
-      <div className="mx-auto flex flex-wrap items-center justify-around ">
+      <div className="mx-auto flex flex-wrap items-center justify-around">
         {recipes.map((recipe) => (
-          <div key={recipe._id} className="p-4">
+          <Link href={recipe._id} key={recipe._id} className="space-y-5 p-4">
             <div className="relative h-[400px] w-[300px]">
               <Image
                 src={recipe.primaryImage}
@@ -39,10 +42,10 @@ export default async function RecipesPage() {
             </div>
             <h3>{recipe.title}</h3>
             <h6>{changeDate(recipe._createdAt)}</h6>
-          </div>
+          </Link>
         ))}
         {recipes.map((recipe) => (
-          <div key={recipe._id} className="p-4">
+          <div key={recipe._id} className="space-y-5 p-4">
             <div className="relative h-[400px] w-[300px]">
               <Image
                 src={recipe.primaryImage}

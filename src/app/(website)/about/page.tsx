@@ -25,7 +25,7 @@ export default function About() {
         reverse={true}
       />
       {/* // ! OUR TEAM SECTION */}
-      <div className="flex flex-col space-y-20">
+      <div className="flex flex-col space-y-40">
         <OurTeamPerson
           name="Anja Bulatovic"
           text={lorem}
