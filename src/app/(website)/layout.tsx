@@ -19,7 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.className}  w-full `}>
+      <body className={`${inter.className}  min-h-full w-full`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
