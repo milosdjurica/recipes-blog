@@ -8,7 +8,7 @@ export default async function AllRecipesComponent() {
 
   return (
     // TODO  maybe change to grid
-    <div className="flex flex-wrap items-center justify-center gap-6 p-2 text-center md:p-4">
+    <div className="flex flex-wrap items-center justify-center gap-6 text-center 2xl:grid 2xl:grid-cols-4 ">
       {recipes.map((recipe) => (
         <>
           <RecipeCard key={recipe._id} recipe={recipe} />

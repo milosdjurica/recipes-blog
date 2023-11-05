@@ -7,8 +7,8 @@ export default async function Home() {
 
   return (
     <main>
-      <div className="flex flex-col items-center space-y-10 py-10">
-        <h1 className="text-center text-5xl font-bold text-gray-400">
+      <div className="flex flex-col items-center py-10">
+        <h1 className="mb-20 text-center text-5xl font-bold">
           The Culinary Fair
         </h1>
         {/* // TODO Sorting picker COMPONENT so everything stays on server side
