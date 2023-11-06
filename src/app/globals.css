@@ -53,6 +53,15 @@
   * {
     @apply border-border;
   }
+
+  .multipleH2 h2 {
+    @apply mb-4 text-4xl font-bold;
+  }
+
+  .multipleH2 div {
+    @apply space-y-2;
+  }
+
   body {
     @apply bg-background text-foreground;
   }
