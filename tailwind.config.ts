@@ -16,6 +16,10 @@ module.exports = {
       },
     },
     extend: {
+      fontFamily: {
+        opensans: ["var(--font-opensans)"],
+        cormorant: ["var(--font-cormorant)"],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

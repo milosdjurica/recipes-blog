@@ -1,6 +1,7 @@
 import AllRecipesComponent from "@/src/components/AllRecipesComponent";
 import { Separator } from "@/src/components/ui/separator";
 import { revalidatePath } from "next/cache";
+import { cormorant } from "./layout";
 
 export default async function Home() {
   revalidatePath("/");
@@ -15,7 +16,9 @@ export default async function Home() {
             // TODO  and then save it to the zustand state */}
 
         {/* <Separator  /> */}
-        <h2 className="text-3xl font-bold">Latest posts</h2>
+        <h2 className={`${cormorant.className}  text-4xl font-bold`}>
+          Latest posts
+        </h2>
         {/* <Separator /> */}
         <AllRecipesComponent />
         {/* <AllRecipesComponent /> */}

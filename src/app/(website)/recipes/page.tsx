@@ -3,6 +3,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { revalidatePath } from "next/cache";
+import { cormorant } from "../layout";
 
 export default async function RecipesPage() {
   revalidatePath("/recipes");
@@ -21,7 +22,9 @@ export default async function RecipesPage() {
   return (
     <div className="space-y-40 text-center">
       <div className="mx-auto flex flex-col items-center space-y-20 bg-gray-100 py-10">
-        <h1 className="text-5xl font-semibold">Recipes</h1>
+        <h1 className={`${cormorant.className} text-6xl font-semibold`}>
+          Recipes
+        </h1>
         <p className="w-[90%] md:w-2/3 lg:w-1/2">
           Recipes are the heart and soul of The Culinary Fair - So, whether
           you&#39;re a seasoned home chef or just starting your culinary

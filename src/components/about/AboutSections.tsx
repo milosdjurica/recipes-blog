@@ -46,9 +46,7 @@ export default function AboutSections({
           className="hidden md:flex"
         />
         <div className="space-y-10">
-          <h2
-            className={`font-cormorant text-4xl font-semibold ${cormorant.className}`}
-          >
+          <h2 className={` text-4xl font-semibold ${cormorant.className}`}>
             {title}
           </h2>
           <p className="mx-auto md:w-[90%]">{text}</p>

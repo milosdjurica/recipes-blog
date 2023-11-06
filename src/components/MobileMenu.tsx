@@ -27,6 +27,7 @@ import {
   DropdownMenuTrigger,
 } from "@/src/components/ui/dropdown-menu";
 import { ThemeButton } from "./ThemeButton";
+import { cormorant } from "../app/(website)/layout";
 
 export function MobileMenu() {
   return (
@@ -36,7 +37,9 @@ export function MobileMenu() {
           <Menu />
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="mr-2 w-48 border border-gray-400 md:hidden">
+      <DropdownMenuContent
+        className={`${cormorant.className} mr-2 w-48 border border-gray-400 md:hidden`}
+      >
         <div className="flex flex-wrap items-end justify-around">
           <DropdownMenuLabel className="text-md font-semibold">
             The Culinary Fair
@@ -44,7 +47,7 @@ export function MobileMenu() {
         </div>
 
         <DropdownMenuSeparator className="bg-gray-400" />
-        <DropdownMenuGroup>
+        <DropdownMenuGroup className="font-semibold">
           <DropdownMenuItem>Home</DropdownMenuItem>
           <DropdownMenuItem>Recipes</DropdownMenuItem>
           <DropdownMenuItem>About us</DropdownMenuItem>

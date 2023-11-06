@@ -10,10 +10,12 @@ const inter = Inter({ subsets: ["latin"] });
 
 const opensans = Open_Sans({
   subsets: ["latin"],
+  variable: "--font-opensans",
 });
 
 export const cormorant = Cormorant({
   subsets: ["latin"],
+  variable: "--font-cormorant",
 });
 
 export const metadata: Metadata = {

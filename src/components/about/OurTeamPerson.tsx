@@ -7,6 +7,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "../ui/tooltip";
+import { cormorant } from "@/src/app/(website)/layout";
 
 type OurTeamPersonProps = {
   name?: string;
@@ -37,7 +38,9 @@ export default function OurTeamPerson({
         className="rounded-full"
       />
       <div className="space-y-5 md:w-1/2">
-        <h2 className="text-3xl font-semibold">{name}</h2>
+        <h2 className={`${cormorant.className} text-3xl font-semibold`}>
+          {name}
+        </h2>
         <p>{text}</p>
         {reverse ? (
           <></>
