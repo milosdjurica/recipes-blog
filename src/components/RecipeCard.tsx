@@ -6,6 +6,7 @@ import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
+import { cormorant } from "../app/(website)/layout";
 
 export default function RecipeCard({ recipe }: { recipe: Recipe }) {
   const [isHovered, setIsHovered] = useState(false);
@@ -34,7 +35,9 @@ export default function RecipeCard({ recipe }: { recipe: Recipe }) {
       </div>
 
       <div className="relative space-y-3">
-        <h3 className="text-2xl font-semibold">{recipe.title}</h3>
+        <h3 className={`${cormorant.className} text-2xl font-semibold`}>
+          {recipe.title}
+        </h3>
         <Image
           src={recipe.primaryImage}
           alt={recipe.title}

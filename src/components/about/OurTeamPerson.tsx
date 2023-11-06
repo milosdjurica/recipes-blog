@@ -37,7 +37,7 @@ export default function OurTeamPerson({
         height={150}
         className="rounded-full"
       />
-      <div className="space-y-5 md:w-1/2">
+      <div className="space-y-10  md:w-1/2">
         <h2 className={`${cormorant.className} text-4xl font-semibold`}>
           {name}
         </h2>

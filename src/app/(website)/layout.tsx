@@ -18,7 +18,7 @@ export const cormorant = Cormorant({
   variable: "--font-cormorant",
 });
 
-export const metadata: Metadata = {
+const metadata: Metadata = {
   title: "Recipes blog",
   description:
     "Find best Balkan recipes here. Healthy, good and delicious food.",
@@ -31,7 +31,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${opensans.className} min-h-screen w-full`}>
+      <body
+        className={`${opensans.className} flex min-h-screen w-full flex-col justify-between`}
+      >
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
