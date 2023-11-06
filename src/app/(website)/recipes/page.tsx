@@ -2,8 +2,11 @@ import { getRecipes } from "@/sanity/sanity.utils";
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { revalidatePath } from "next/cache";
 
 export default async function RecipesPage() {
+  revalidatePath("/recipes");
+
   const recipes = await getRecipes();
 
   function changeDate(date: Date) {
@@ -31,7 +34,11 @@ export default async function RecipesPage() {
       {/* // TODO ADD NEXT PAGE BUTTON */}
       <div className="mx-auto flex flex-wrap items-center justify-around">
         {recipes.map((recipe) => (
-          <Link href={recipe._id} key={recipe._id} className="space-y-5 p-4">
+          <Link
+            href={`/recipes/${recipe._id}`}
+            key={recipe._id}
+            className="space-y-3 p-4"
+          >
             <div className="relative h-[350px] w-[350px] ">
               <Image
                 src={recipe.primaryImage}
