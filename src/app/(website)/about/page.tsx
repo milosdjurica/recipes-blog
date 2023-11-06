@@ -36,19 +36,21 @@ export default function About() {
         reverse={true}
       />
       {/* // ! OUR TEAM SECTION */}
-      <OurTeamPerson
-        name="Anja Bulatovic"
-        text={anja1}
-        imageUrl="/images/anja-siva.png"
-        alt="alt for pic"
-        reverse={false}
-      />
-      <OurTeamPerson
-        text={anja2}
-        imageUrl="/images/doodle.png"
-        alt="doodle alt"
-        reverse={true}
-      />
+      <div className="space-y-20">
+        <OurTeamPerson
+          name="Anja Bulatovic"
+          text={anja1}
+          imageUrl="/images/anja-siva.png"
+          alt="alt for pic"
+          reverse={false}
+        />
+        <OurTeamPerson
+          text={anja2}
+          imageUrl="/images/doodle.png"
+          alt="doodle alt"
+          reverse={true}
+        />
+      </div>
     </div>
   );
 }

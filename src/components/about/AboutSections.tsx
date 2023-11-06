@@ -1,6 +1,8 @@
 import Image from "next/image";
 import React from "react";
 
+import { cormorant } from "@/src/app/(website)/layout";
+
 type AboutSections = {
   title: string;
   text: string;
@@ -34,7 +36,7 @@ export default function AboutSections({
       {/* // ! 2nd part of section */}
       <div
         className="mt-10 flex flex-col items-center justify-between 
-        text-center md:mt-0 md:w-1/2 "
+        text-center md:mt-0 md:w-1/2"
       >
         <Image
           src="/images/doodle.png"
@@ -44,7 +46,11 @@ export default function AboutSections({
           className="hidden md:flex"
         />
         <div className="space-y-10">
-          <h2 className="text-4xl font-semibold">{title}</h2>
+          <h2
+            className={`font-cormorant text-4xl font-semibold ${cormorant.className}`}
+          >
+            {title}
+          </h2>
           <p className="mx-auto md:w-[90%]">{text}</p>
         </div>
       </div>

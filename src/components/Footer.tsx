@@ -12,7 +12,7 @@ export default function Footer() {
           <Separator className="bg-black" />
           <div className="flex flex-col">
             <Link href="/about">About us</Link>
-            <Link href="/pp">Privacy Policy</Link>
+            <Link href="/privacy">Privacy Policy</Link>
             <Link href="/faq">FAQ</Link>
             <Link href="/contact">Contact us</Link>
           </div>
