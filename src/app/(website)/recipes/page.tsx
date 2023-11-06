@@ -21,7 +21,7 @@ export default async function RecipesPage() {
 
   return (
     <div className="space-y-40 text-center">
-      <div className="mx-auto flex flex-col items-center space-y-20 bg-gray-100 py-10">
+      <div className="mx-auto flex flex-col items-center space-y-10 bg-gray-100 py-10">
         <h1 className={`${cormorant.className} text-6xl font-semibold`}>
           Recipes
         </h1>

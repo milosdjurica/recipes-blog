@@ -22,7 +22,7 @@ export default function About() {
       {/* // ! first section */}
 
       <AboutSections
-        title="WELCOME TO CULINARY FAIR"
+        title="WELCOME TO THE CULINARY FAIR"
         text={welcome}
         imageUrl="/images/about-welcome.jpg"
         alt="alt for pic"
@@ -38,7 +38,7 @@ export default function About() {
       {/* // ! OUR TEAM SECTION */}
       <div className="space-y-20">
         <OurTeamPerson
-          name="Anja Bulatovic"
+          name="ANJA BULATOVIC"
           text={anja1}
           imageUrl="/images/anja-siva.png"
           alt="alt for pic"

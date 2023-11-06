@@ -16,9 +16,7 @@ export default async function Home() {
             // TODO  and then save it to the zustand state */}
 
         {/* <Separator  /> */}
-        <h2 className={`${cormorant.className}  text-4xl font-bold`}>
-          Latest posts
-        </h2>
+        <h2 className={`${cormorant.className}  text-4xl`}>Latest posts</h2>
         {/* <Separator /> */}
         <AllRecipesComponent />
         {/* <AllRecipesComponent /> */}

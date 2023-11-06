@@ -10,7 +10,7 @@ export default function Footer() {
         <div className="flex flex-col space-y-2">
           <h6>QUICK LINKS</h6>
           <Separator className="bg-black" />
-          <div className="flex flex-col">
+          <div className="flex flex-col space-y-3">
             <Link href="/about">About us</Link>
             <Link href="/privacy">Privacy Policy</Link>
             <Link href="/faq">FAQ</Link>
@@ -21,18 +21,18 @@ export default function Footer() {
         <div className="flex flex-col space-y-2">
           <h6>FOLLOW US</h6>
           <Separator className="bg-black" />
-          <div className="flex flex-col items-center justify-between space-y-2">
-            <Instagram />
-            <Facebook />
-            <Mail />
+          <div className="flex flex-col items-center justify-between space-y-6">
+            <Instagram className="h-[30px] w-[30px]" />
+            <Facebook className="h-[30px] w-[30px]" />
+            <Mail className="h-[30px] w-[30px]" />
           </div>
         </div>
 
         <div className="flex flex-col space-y-2">
           <h6>TOP RECIPES</h6>
           <Separator className="bg-black" />
-          <div className="flex flex-col">
-            <Link href="/recipes">Recipe 1 </Link>
+          <div className="flex flex-col space-y-3">
+            <Link href="/recipes">Recipe 1</Link>
             <Link href="/recipes">Recipe 2</Link>
             <Link href="/recipes">Recipe 3</Link>
             <Link href="/recipes">Recipe 4</Link>
