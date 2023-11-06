@@ -39,7 +39,7 @@ export default function About() {
       <OurTeamPerson
         name="Anja Bulatovic"
         text={anja1}
-        imageUrl="/images/anja.png"
+        imageUrl="/images/anja-siva.png"
         alt="alt for pic"
         reverse={false}
       />

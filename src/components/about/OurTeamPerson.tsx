@@ -1,6 +1,12 @@
 import React from "react";
 import Image from "next/image";
 import { Facebook, Instagram, Mail } from "lucide-react";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "../ui/tooltip";
 
 type OurTeamPersonProps = {
   name?: string;
@@ -27,12 +33,37 @@ export default function OurTeamPerson({
       <div className="space-y-5 md:w-1/2">
         <h2 className="text-3xl font-semibold">{name}</h2>
         <p>{text}</p>
-        <div className="flex justify-evenly">
-          {/* // ! ADD LINKS */}
-          <Facebook size="30px" />
-          <Instagram size="30px" />
-          <Mail size="30px" />
-        </div>
+        {reverse ? (
+          <></>
+        ) : (
+          <div className="flex justify-evenly">
+            {/* // ! ADD LINKS */}
+            <a
+              href="https://www.facebook.com/anja.bulatovic.7"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Facebook size="30px" />
+            </a>
+            <a
+              href="https://www.instagram.com/anjabulatovic2/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Instagram size="30px" />
+            </a>
+            <TooltipProvider>
+              <Tooltip>
+                <TooltipTrigger>
+                  <Mail size="30px" />
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>anjabulatovic@icloud.com</p>
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
+          </div>
+        )}
       </div>
     </div>
   );
