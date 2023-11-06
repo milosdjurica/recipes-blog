@@ -29,7 +29,13 @@ export default function OurTeamPerson({
         reverse ? "md:flex-row-reverse" : "md:flex-row"
       }`}
     >
-      <Image src={imageUrl} alt={alt} width={250} height={150} />
+      <Image
+        src={imageUrl}
+        alt={alt}
+        width={250}
+        height={150}
+        className="rounded-full"
+      />
       <div className="space-y-5 md:w-1/2">
         <h2 className="text-3xl font-semibold">{name}</h2>
         <p>{text}</p>
