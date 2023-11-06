@@ -44,20 +44,6 @@ export default async function RecipesPage() {
             <h6>{changeDate(recipe._createdAt)}</h6>
           </Link>
         ))}
-        {recipes.map((recipe) => (
-          <div key={recipe._id} className="space-y-5 p-4">
-            <div className="relative h-[350px] w-[350px]">
-              <Image
-                src={recipe.primaryImage}
-                alt="opa"
-                fill
-                className="object-cover"
-              />
-            </div>
-            <h3>{recipe.title}</h3>
-            <h6>{changeDate(recipe._createdAt)}</h6>
-          </div>
-        ))}
       </div>
     </div>
   );

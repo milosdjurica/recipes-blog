@@ -28,6 +28,24 @@ export async function getRecipes(): Promise<Recipe[]> {
   );
 }
 
+export async function getLast8(): Promise<Recipe[]> {
+  return client.fetch(
+    groq`*[_type=="recipe"] | order(_createdAt desc)[0..7]{
+      _id,
+      _createdAt,
+      title,
+      "slug": slug.current,
+      "primaryImage": primaryImage.asset->url,
+      description,
+      "ingredients": *[_type=="ingredient" && _id in ^.ingredients[]._ref]{
+        "recipe_ingredient_id": _id,
+        name,
+      },
+      difficulty,
+      }`,
+  );
+}
+
 // TODO
 // ! Doesnt return all, so give type getSingleRecipeResponse with Omit<Recipe>
 export async function getSingleRecipe(id: string): Promise<Recipe> {

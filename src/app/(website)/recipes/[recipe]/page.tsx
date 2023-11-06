@@ -14,9 +14,7 @@ export default async function RecipePage({ params }: Props) {
 
   return (
     <div className="flex w-full flex-col items-center justify-center space-y-6 p-6">
-      <h1 className="text-center text-5xl font-semibold text-primary">
-        {recipe.title}
-      </h1>
+      <h1 className="text-center text-5xl font-semibold">{recipe.title}</h1>
       <div className="relative flex h-[500px] w-full">
         <Image
           src={recipe.primaryImage}
