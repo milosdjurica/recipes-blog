@@ -8,13 +8,12 @@ type Props = {
   params: { recipe: string };
 };
 
-// TODO CREATE THIS PAGE !!!!!!!!!!!!!!!!!!!!!!
 export default async function RecipePage({ params }: Props) {
   const id = params.recipe;
   const recipe = await getSingleRecipe(id);
 
   return (
-    <div className="mx-auto flex  w-full flex-col items-center justify-center space-y-10 p-6 md:w-2/3">
+    <div className="mx-auto flex w-full flex-col items-center justify-center space-y-10 p-6 md:w-2/3">
       <h1
         className={`${cormorant.className} text-center text-5xl font-semibold`}
       >
@@ -26,7 +25,7 @@ export default async function RecipePage({ params }: Props) {
           alt={recipe.title}
           fill
           priority
-          className="rounded-lg border border-primary object-cover"
+          className="rounded-lg object-cover"
         />
       </div>
       <div
@@ -48,7 +47,7 @@ export default async function RecipePage({ params }: Props) {
         <PortableText value={recipe.description} />
       </div>
       <div className="border border-black  px-6 py-4">
-        <h2 className="text-2xl underline decoration-primary">Ingredients</h2>
+        <h2 className="text-2xl">Ingredients</h2>
         <ol className="list-inside list-disc">
           {recipe.ingredients.map((ingredient) => (
             <li key={ingredient.recipe_ingredient_id}>
@@ -58,16 +57,18 @@ export default async function RecipePage({ params }: Props) {
         </ol>
       </div>
       {recipe.secondaryImage && (
-        <Image
-          src={recipe.secondaryImage.url}
-          alt={recipe.secondaryImage.alt}
-          width={300}
-          height={300}
-        />
+        <div className="relative flex h-[400px] w-full md:h-[500px] lg:w-1/2">
+          <Image
+            src={recipe.secondaryImage.url}
+            alt={recipe.secondaryImage.alt}
+            fill
+            className="rounded-lg object-cover"
+          />
+        </div>
       )}
 
       <div className="space-y-4 text-lg">
-        <h2 className="text-2xl underline decoration-primary">Instructions</h2>
+        <h2 className="text-2xl">Instructions</h2>
         <PortableText value={recipe.instructions} />
       </div>
     </div>
