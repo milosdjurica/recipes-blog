@@ -22,6 +22,8 @@ export async function getRecipes(): Promise<Recipe[]> {
       "ingredients": *[_type=="ingredient" && _id in ^.ingredients[]._ref]{
         "recipe_ingredient_id": _id,
         name,
+        quantity,
+        unit,
       },
       difficulty,
     }`,
@@ -36,11 +38,13 @@ export async function getLast8(): Promise<Recipe[]> {
       title,
       "slug": slug.current,
       "primaryImage": primaryImage.asset->url,
-      description-home-page,
+      descriptionHP,
       description,
       "ingredients": *[_type=="ingredient" && _id in ^.ingredients[]._ref]{
         "recipe_ingredient_id": _id,
         name,
+        quantity,
+        unit,
       },
       difficulty,
       }`,
@@ -63,6 +67,8 @@ export async function getSingleRecipe(id: string): Promise<Recipe> {
       "ingredients": *[_type=="ingredient" && _id in ^.ingredients[]._ref]{
         "recipe_ingredient_id": _id,
         name,
+        quantity,
+        unit,
       },
       difficulty,
         instructions,

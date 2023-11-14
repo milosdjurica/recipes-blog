@@ -1,5 +1,4 @@
 import AllRecipesComponent from "@/src/components/AllRecipesComponent";
-import { Separator } from "@/src/components/ui/separator";
 import { revalidatePath } from "next/cache";
 import { cormorant } from "./layout";
 

@@ -48,7 +48,7 @@ export default function RecipeCard({ recipe }: { recipe: Recipe }) {
           className="h-[200px] w-full rounded-md object-cover"
         />
 
-        <PortableText value={recipe.description} />
+        <PortableText value={recipe.descriptionHP} />
       </div>
     </div>
   );

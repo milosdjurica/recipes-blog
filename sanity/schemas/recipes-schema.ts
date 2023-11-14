@@ -42,7 +42,7 @@ const recipe = {
       // validation: (Rule: any) => Rule.required(),
     },
     {
-      name: "description-home-page",
+      name: "descriptionHP",
       title: "Description Home Page",
       type: "array",
       of: [{ type: "block" }],

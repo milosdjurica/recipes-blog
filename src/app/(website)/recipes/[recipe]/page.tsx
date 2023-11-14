@@ -54,7 +54,9 @@ export default async function RecipePage({ params }: Props) {
         <h2 className="text-2xl underline decoration-primary">Ingredients</h2>
         <ol className="list-inside list-disc">
           {recipe.ingredients.map((ingredient) => (
-            <li key={ingredient.recipe_ingredient_id}>{ingredient.name}</li>
+            <li key={ingredient.recipe_ingredient_id}>
+              {ingredient.name} {ingredient.quantity} {ingredient.unit}
+            </li>
           ))}
         </ol>
       </div>
