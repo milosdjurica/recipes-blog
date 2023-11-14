@@ -15,23 +15,24 @@ const anja2 =
 export default function About() {
   return (
     // !First
-    <div className="mx-auto my-10 w-[90%] space-y-10 md:space-y-80 lg:w-3/4">
+    <div className="mx-auto my-10 w-[90%] space-y-20 md:space-y-80 lg:w-3/4">
       {/* // ! first section */}
-
-      <AboutSections
-        title="WELCOME TO THE CULINARY FAIR"
-        text={welcome}
-        imageUrl="/images/about-welcome.jpg"
-        alt="alt for pic"
-        reverse={false}
-      />
-      <AboutSections
-        title="OUR STORY"
-        text={ourStory}
-        imageUrl="/images/about-story.jpg"
-        alt="alt for pic"
-        reverse={true}
-      />
+      <div className="space-y-10 md:space-y-80">
+        <AboutSections
+          title="WELCOME TO THE CULINARY FAIR"
+          text={welcome}
+          imageUrl="/images/about-welcome.jpg"
+          alt="alt for pic"
+          reverse={false}
+        />
+        <AboutSections
+          title="OUR STORY"
+          text={ourStory}
+          imageUrl="/images/about-story.jpg"
+          alt="alt for pic"
+          reverse={true}
+        />
+      </div>
       {/* // ! OUR TEAM SECTION */}
       <div className="space-y-20">
         <OurTeamPerson
