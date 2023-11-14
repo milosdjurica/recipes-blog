@@ -15,7 +15,7 @@ const anja2 =
 export default function About() {
   return (
     // !First
-    <div className="mx-auto my-10 w-[90%] space-y-40 md:space-y-80 lg:w-3/4">
+    <div className="mx-auto my-10 w-[90%] space-y-10 md:space-y-80 lg:w-3/4">
       {/* // ! first section */}
 
       <AboutSections
