@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Cormorant, Inter, Open_Sans } from "next/font/google";
 import "../globals.css";
-import { ThemeProvider } from "@/src/providers/ThemeProvider";
 import Navbar from "@/src/components/Navbar";
 import ScrollButton from "@/src/components/ScrollButton";
 import Footer from "@/src/components/Footer";
