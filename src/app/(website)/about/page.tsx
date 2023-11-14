@@ -7,9 +7,6 @@ const welcome =
 const ourStory =
   "Our team is a small, close-knit group of food lovers who share a deep passion for experimenting in the kitchen and discovering new recipes. Our journey led us to create this lovely cooking blog, where we share a treasure trove of recipes for every meal of the day. Whether you're looking for ideas for appetizers, lunch, dinner, or other, we've got you covered.";
 
-const lorem =
-  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur cupiditate, minus voluptatem non ad vel praesentium accusantium dolorum rem tempore debitis. Distinctio placeat obcaecati veritatis magni animi, accusantium laboriosam voluptatibus?";
-
 const anja1 =
   "Hi, I'm Anya! Along with being a food lover, I'm a professional copywriter and content writer. I've recognized the perfect opportunity to merge my two passions - cooking and writing. The result? The Culinary Fair is a blog that's a testament to my dedication to the culinary arts and the written craft. With a deep appreciation for wholesome, healthy, and delicious food, The Culinary Fair's focus is creating recipes that celebrate natural ingredients, whole grains, good fats, and an abundance of fresh fruits and vegetables. My love for the culinary world goes beyond the kitchen.";
 const anja2 =
@@ -18,7 +15,7 @@ const anja2 =
 export default function About() {
   return (
     // !First
-    <div className="mx-auto my-10 w-[90%] space-y-80 lg:w-3/4">
+    <div className="mx-auto my-10 w-[90%] space-y-40 md:space-y-80 lg:w-3/4">
       {/* // ! first section */}
 
       <AboutSections
