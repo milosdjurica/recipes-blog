@@ -48,6 +48,7 @@ export function MobileMenu() {
 
         <DropdownMenuSeparator className="bg-gray-400" />
         <DropdownMenuGroup className="font-semibold">
+          {/* // ! ADD LINKS!!!!!!!!!!!!!!!! */}
           <DropdownMenuItem>Home</DropdownMenuItem>
           <DropdownMenuItem>Recipes</DropdownMenuItem>
           <DropdownMenuItem>About us</DropdownMenuItem>

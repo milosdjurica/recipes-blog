@@ -8,7 +8,6 @@ export type Recipe = {
   title: string;
   slug: string;
   time?: RecipeTime;
-  price?: RecipePrice;
   ingredients: RecipeIngredient[];
   primaryImage: string;
   secondaryImage?: {
@@ -31,8 +30,4 @@ export type RecipeIngredient = {
 export type RecipeTime = {
   count: number;
   unit: "Seconds" | "Minutes" | "Hours" | "Days";
-};
-export type RecipePrice = {
-  count: number;
-  unit: "RSD" | "EUR";
 };

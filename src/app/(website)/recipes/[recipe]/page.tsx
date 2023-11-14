@@ -36,9 +36,6 @@ export default async function RecipePage({ params }: Props) {
           {/* // TODO put range GREEN YELLOW RED -> easy/medium/hard */}
           <h2>Difficulty: {recipe.difficulty}</h2>
         </div>
-        <h2>
-          Expected cost: {recipe.price?.count} {recipe.price?.unit}
-        </h2>
         <div>
           {/* // TODO add time icon */}
           <h2>

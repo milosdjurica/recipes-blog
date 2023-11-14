@@ -18,7 +18,6 @@ export async function getRecipes(): Promise<Recipe[]> {
       "primaryImage": primaryImage.asset->url,
       description,
       time,
-      price,
       "ingredients": *[_type=="ingredient" && _id in ^.ingredients[]._ref]{
         "recipe_ingredient_id": _id,
         name,
@@ -63,7 +62,6 @@ export async function getSingleRecipe(id: string): Promise<Recipe> {
       "primaryImage": primaryImage.asset->url,
       description,
       time,
-      price,
       "ingredients": *[_type=="ingredient" && _id in ^.ingredients[]._ref]{
         "recipe_ingredient_id": _id,
         name,
