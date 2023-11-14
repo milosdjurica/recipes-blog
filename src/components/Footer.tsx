@@ -39,7 +39,7 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <h5 className="mt-4">
+      <h5 className="mt-10">
         © 2023 The Culinary Fair. All rights reserved. Design by Bulatovic
         Anja.
       </h5>

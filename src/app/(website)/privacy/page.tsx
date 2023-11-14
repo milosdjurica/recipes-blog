@@ -3,7 +3,7 @@ import { cormorant } from "../layout";
 
 export default function Privacy() {
   return (
-    <div className="multipleH2 mx-auto space-y-10 md:w-[70%]">
+    <div className="multipleH2 mx-auto mb-20 mt-10 space-y-10 md:w-[70%]">
       <h1 className={`${cormorant.className} text-center text-6xl font-bold`}>
         Privacy Policy
       </h1>

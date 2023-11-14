@@ -3,7 +3,7 @@ import { cormorant } from "../layout";
 
 export default function Faq() {
   return (
-    <div className="multipleH2 mx-auto h-full min-h-full space-y-10 p-4 md:w-[80%]">
+    <div className="multipleH2 mx-auto my-10 h-full min-h-full space-y-10 p-4 md:w-[80%]">
       <h1 className={`${cormorant.className} text-center text-5xl font-bold`}>
         FAQ
       </h1>
@@ -76,6 +76,8 @@ export default function Faq() {
           After all, cooking is all about exploring, and who knows, you might
           uncover a hidden culinary gem!
         </p>
+      </div>
+      <div>
         <p>
           Our goal at The Culinary Fair is to make your food journey as fun as
           possible.
