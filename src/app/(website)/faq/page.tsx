@@ -3,7 +3,7 @@ import { cormorant } from "../layout";
 
 export default function Faq() {
   return (
-    <div className="multipleH2 mx-auto my-10 h-full min-h-full space-y-10 p-4 md:w-[80%]">
+    <div className="multipleH2 mx-auto my-10 h-full min-h-full space-y-10 p-4 text-center md:w-[80%] lg:w-1/2">
       <h1 className={`${cormorant.className} text-center text-5xl font-bold`}>
         FAQ
       </h1>

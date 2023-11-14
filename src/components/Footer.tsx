@@ -5,7 +5,7 @@ import { Facebook, Instagram, Mail } from "lucide-react";
 
 export default function Footer() {
   return (
-    <div className="bg-gray-100 py-10 text-center">
+    <div className="bg-gray-100 pb-5 pt-10 text-center">
       <div className="mx-auto flex items-start justify-around md:w-2/3">
         <div className="flex flex-col space-y-2">
           <h6>QUICK LINKS</h6>

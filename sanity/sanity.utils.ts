@@ -36,6 +36,7 @@ export async function getLast8(): Promise<Recipe[]> {
       title,
       "slug": slug.current,
       "primaryImage": primaryImage.asset->url,
+      description-home-page,
       description,
       "ingredients": *[_type=="ingredient" && _id in ^.ingredients[]._ref]{
         "recipe_ingredient_id": _id,

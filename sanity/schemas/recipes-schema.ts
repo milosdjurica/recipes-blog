@@ -27,7 +27,7 @@ const recipe = {
           name: "count",
           title: "Count",
           type: "number",
-          validation: (Rule: any) => Rule.required().min(0),
+          // validation: (Rule: any) => Rule.required().min(0),
         },
         {
           name: "unit",
@@ -36,33 +36,18 @@ const recipe = {
           options: {
             list: ["seconds", "minutes", "hours", "days"],
           },
-          validation: (Rule: any) => Rule.required(),
+          // validation: (Rule: any) => Rule.required(),
         },
       ],
-      validation: (Rule: any) => Rule.required(),
+      // validation: (Rule: any) => Rule.required(),
     },
     {
-      name: "price",
-      title: "Price",
-      type: "object",
-      fields: [
-        {
-          name: "count",
-          title: "Count",
-          type: "number",
-          validation: (Rule: any) => Rule.required().min(0),
-        },
-        {
-          name: "unit",
-          title: "Unit",
-          type: "string",
-          options: {
-            list: ["RSD", "EUR"],
-          },
-          validation: (Rule: any) => Rule.required(),
-        },
-      ],
-      validation: (Rule: any) => Rule.required(),
+      name: "description-home-page",
+      title: "Description Home Page",
+      type: "array",
+      of: [{ type: "block" }],
+      validation: (Rule: any) =>
+        Rule.required().error("Please give some basic description!"),
     },
     {
       name: "description",
@@ -118,8 +103,8 @@ const recipe = {
       options: {
         list: ["Easy", "Medium", "Hard"],
       },
-      validation: (Rule: any) =>
-        Rule.required().error("Please select difficulty!"),
+      // validation: (Rule: any) =>
+      // Rule.required().error("Please select difficulty!"),
     },
   ],
 };
