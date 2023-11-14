@@ -1,20 +1,4 @@
-import {
-  Cloud,
-  CreditCard,
-  Github,
-  Keyboard,
-  LifeBuoy,
-  LogOut,
-  Mail,
-  Menu,
-  MessageSquare,
-  Plus,
-  PlusCircle,
-  Settings,
-  User,
-  UserPlus,
-  Users,
-} from "lucide-react";
+import { Menu } from "lucide-react";
 
 import { Button } from "@/src/components/ui/button";
 import {
@@ -26,8 +10,8 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/src/components/ui/dropdown-menu";
-import { ThemeButton } from "./ThemeButton";
 import { cormorant } from "../app/(website)/layout";
+import Link from "next/link";
 
 export function MobileMenu() {
   return (
@@ -49,19 +33,18 @@ export function MobileMenu() {
         <DropdownMenuSeparator className="bg-gray-400" />
         <DropdownMenuGroup className="font-semibold">
           {/* // ! ADD LINKS!!!!!!!!!!!!!!!! */}
-          <DropdownMenuItem>Home</DropdownMenuItem>
-          <DropdownMenuItem>Recipes</DropdownMenuItem>
-          <DropdownMenuItem>About us</DropdownMenuItem>
-          <DropdownMenuItem>Contact</DropdownMenuItem>
-        </DropdownMenuGroup>
-        <DropdownMenuSeparator className="bg-gray-400" />
-        <DropdownMenuGroup>
-          <div className="flex items-center justify-between">
-            <DropdownMenuLabel className="text-md font-semibold">
-              Theme
-            </DropdownMenuLabel>
-            <ThemeButton />
-          </div>
+          <DropdownMenuItem asChild>
+            <Link href="/">Home</Link>
+          </DropdownMenuItem>
+          <DropdownMenuItem asChild>
+            <Link href="/recipes">Recipes</Link>
+          </DropdownMenuItem>
+          <DropdownMenuItem asChild>
+            <Link href="/about">About Us</Link>
+          </DropdownMenuItem>
+          <DropdownMenuItem asChild>
+            <Link href="/contact">Contact</Link>
+          </DropdownMenuItem>
         </DropdownMenuGroup>
       </DropdownMenuContent>
     </DropdownMenu>
