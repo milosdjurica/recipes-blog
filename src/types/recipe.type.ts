@@ -21,7 +21,6 @@ export type Recipe = {
 };
 
 export type RecipeIngredient = {
-  recipe_ingredient_id: string;
   name: string;
   quantity: number;
   unit: string;

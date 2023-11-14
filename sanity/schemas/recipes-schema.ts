@@ -69,7 +69,28 @@ const recipe = {
       name: "ingredients",
       title: "Ingredients",
       type: "array",
-      of: [{ type: "reference", to: [{ type: "ingredient" }] }],
+      of: [
+        {
+          type: "object",
+          fields: [
+            {
+              name: "name",
+              title: "Ingredient Name",
+              type: "string",
+            },
+            {
+              name: "quantity",
+              title: "Quantity",
+              type: "number",
+            },
+            {
+              name: "unit",
+              title: "Unit",
+              type: "string",
+            },
+          ],
+        },
+      ],
       validation: (Rule: any) =>
         Rule.required().error("Recipe must have some ingredients!"),
     },

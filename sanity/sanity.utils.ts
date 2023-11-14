@@ -39,12 +39,7 @@ export async function getLast8(): Promise<Recipe[]> {
       "primaryImage": primaryImage.asset->url,
       descriptionHP,
       description,
-      "ingredients": *[_type=="ingredient" && _id in ^.ingredients[]._ref]{
-        "recipe_ingredient_id": _id,
-        name,
-        quantity,
-        unit,
-      },
+      ingredients,
       difficulty,
       }`,
   );
@@ -62,12 +57,7 @@ export async function getSingleRecipe(id: string): Promise<Recipe> {
       "primaryImage": primaryImage.asset->url,
       description,
       time,
-      "ingredients": *[_type=="ingredient" && _id in ^.ingredients[]._ref]{
-        "recipe_ingredient_id": _id,
-        name,
-        quantity,
-        unit,
-      },
+      ingredients,
       difficulty,
         instructions,
         "secondaryImage": {
@@ -80,4 +70,26 @@ export async function getSingleRecipe(id: string): Promise<Recipe> {
 }
 
 // TODO list all ingredients on page and then when select find recipe with those ingredients
-export async function getIngredients() {}
+export async function getIngredients(): Promise<string[]> {
+  return client.fetch(groq`*[_type=="recipe"].ingredients[*].name | unique()`);
+}
+
+// ! Get recipes with ingredient
+// export async function getRecipesWithIngredient(
+//   ingredientName: string,
+// ): Promise<Recipe[]> {
+//   return client.fetch(
+//     groq`*[_type=="recipe" && *[_type=="ingredient" && name == $ingredientName]._id in ingredients[]._ref]{
+//       _id,
+//       _createdAt,
+//       title,
+//       "slug": slug.current,
+//       "primaryImage": primaryImage.asset->url,
+//       description,
+//       time,
+//       ingredients,
+//       difficulty,
+//     }`,
+//     { ingredientName },
+//   );
+// }
