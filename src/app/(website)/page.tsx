@@ -11,6 +11,7 @@ export default async function Home() {
         <h1 className="mb-20 text-center text-5xl font-bold">
           The Culinary Fair
         </h1>
+
         {/* // TODO Sorting picker COMPONENT so everything stays on server side
             // TODO  and then save it to the zustand state */}
 
