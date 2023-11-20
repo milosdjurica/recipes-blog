@@ -24,7 +24,7 @@ export async function getRecipes(): Promise<Recipe[]> {
         quantity,
         unit,
       },
-      difficulty,
+      difficulty, 
     }`,
   );
 }
