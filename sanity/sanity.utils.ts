@@ -48,7 +48,7 @@ export async function getLast8(): Promise<Recipe[]> {
 // TODO
 // ! Doesnt return all, so give type getSingleRecipeResponse with Omit<Recipe>
 export async function getSingleRecipe(id: string): Promise<Recipe> {
-  return client.fetch(
+  const c: Recipe = await client.fetch(
     groq`*[_type=="recipe" && _id==$id][0]{
       _id,
       _createdAt,
@@ -57,16 +57,22 @@ export async function getSingleRecipe(id: string): Promise<Recipe> {
       "primaryImage": primaryImage.asset->url,
       description,
       time,
-      ingredients,
+      "ingredients": ingredients[]{
+        name,
+        quantity,
+        unit
+      },
       difficulty,
-        instructions,
-        "secondaryImage": {
-            "url": secondaryImage.asset->url,
-            "alt": secondaryImage.alt
-        },
+      instructions,
+      "secondaryImage": {
+          "url": secondaryImage.asset->url,
+          "alt": secondaryImage.alt
+      },
     }`,
     { id },
   );
+  console.log(c.ingredients);
+  return c;
 }
 
 // TODO list all ingredients on page and then when select find recipe with those ingredients
