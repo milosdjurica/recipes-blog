@@ -8,7 +8,7 @@ const client = createClient({
 });
 
 // ! Doesnt return all, so give type getAllRecipesResponse with Omit<Recipe> or Pick<Recipe>
-export async function getRecipes(): Promise<PickRecipeType> {
+export async function getRecipes(): Promise<PickRecipeType[]> {
   return client.fetch(
     groq`*[_type=="recipe"]{
       _id,
