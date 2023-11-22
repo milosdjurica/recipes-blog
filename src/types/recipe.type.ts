@@ -1,5 +1,15 @@
 import { PortableTextBlock } from "sanity";
 
+export type Last8Type = Pick<
+  Recipe,
+  "_id" | "_createdAt" | "title" | "slug" | "primaryImage" | "descriptionHP"
+>;
+
+export type PickRecipeType = Pick<
+  Recipe,
+  "_id" | "_createdAt" | "title" | "primaryImage"
+>;
+
 export type Recipe = {
   // TODO maybe id uuid type?
   _id: string;
@@ -22,7 +32,7 @@ export type Recipe = {
 
 export type RecipeIngredient = {
   name: string;
-  quantity: number;
+  quantity: string;
   unit: string;
 };
 

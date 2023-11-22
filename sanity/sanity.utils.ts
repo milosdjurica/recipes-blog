@@ -1,4 +1,4 @@
-import { Recipe } from "@/src/types/recipe.type";
+import { Last8Type, PickRecipeType, Recipe } from "@/src/types/recipe.type";
 import { createClient, groq } from "next-sanity";
 
 const client = createClient({
@@ -8,28 +8,18 @@ const client = createClient({
 });
 
 // ! Doesnt return all, so give type getAllRecipesResponse with Omit<Recipe> or Pick<Recipe>
-export async function getRecipes(): Promise<Recipe[]> {
+export async function getRecipes(): Promise<PickRecipeType> {
   return client.fetch(
     groq`*[_type=="recipe"]{
       _id,
       _createdAt,
       title,
-      "slug": slug.current,
       "primaryImage": primaryImage.asset->url,
-      description,
-      time,
-      "ingredients": *[_type=="ingredient" && _id in ^.ingredients[]._ref]{
-        "recipe_ingredient_id": _id,
-        name,
-        quantity,
-        unit,
-      },
-      difficulty, 
     }`,
   );
 }
 
-export async function getLast8(): Promise<Recipe[]> {
+export async function getLast8(): Promise<Last8Type[]> {
   return client.fetch(
     groq`*[_type=="recipe"] | order(_createdAt desc)[0..7]{
       _id,
@@ -38,9 +28,6 @@ export async function getLast8(): Promise<Recipe[]> {
       "slug": slug.current,
       "primaryImage": primaryImage.asset->url,
       descriptionHP,
-      description,
-      ingredients,
-      difficulty,
       }`,
   );
 }
@@ -48,7 +35,7 @@ export async function getLast8(): Promise<Recipe[]> {
 // TODO
 // ! Doesnt return all, so give type getSingleRecipeResponse with Omit<Recipe>
 export async function getSingleRecipe(id: string): Promise<Recipe> {
-  const c: Recipe = await client.fetch(
+  return client.fetch(
     groq`*[_type=="recipe" && _id==$id][0]{
       _id,
       _createdAt,
@@ -71,8 +58,6 @@ export async function getSingleRecipe(id: string): Promise<Recipe> {
     }`,
     { id },
   );
-  console.log(c.ingredients);
-  return c;
 }
 
 // TODO list all ingredients on page and then when select find recipe with those ingredients

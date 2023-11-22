@@ -81,7 +81,7 @@ const recipe = {
             {
               name: "quantity",
               title: "Quantity",
-              type: "number",
+              type: "string",
             },
             {
               name: "unit",

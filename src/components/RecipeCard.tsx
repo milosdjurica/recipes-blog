@@ -1,6 +1,6 @@
 "use client";
 
-import { Recipe } from "@/src/types/recipe.type";
+import { Last8Type } from "@/src/types/recipe.type";
 import { PortableText } from "@portabletext/react";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
@@ -8,7 +8,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { cormorant } from "../app/(website)/layout";
 
-export default function RecipeCard({ recipe }: { recipe: Recipe }) {
+export default function RecipeCard({ recipe }: { recipe: Last8Type }) {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
