@@ -51,7 +51,7 @@ export default async function RecipePage({ params }: Props) {
         <ol className="list-inside list-disc">
           {recipe.ingredients.map((ingredient) => (
             <li key={ingredient.name}>
-              {ingredient.name} {ingredient.quantity} {ingredient.unit}
+              {ingredient.quantity} {ingredient.unit} {ingredient.name}
             </li>
           ))}
         </ol>
