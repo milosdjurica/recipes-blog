@@ -47,7 +47,7 @@ export default async function RecipePage({ params }: Props) {
         <PortableText value={recipe.description} />
       </div>
       <div className="border border-black  px-6 py-4">
-        <h2 className="text-2xl">Ingredients</h2>
+        <h2 className="mb-4 text-2xl">Ingredients</h2>
         <ol className="list-inside list-disc">
           {recipe.ingredients.map((ingredient) => (
             <li key={ingredient.name}>
